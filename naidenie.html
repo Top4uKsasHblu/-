@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link rel="icon" type="png" href="img/лого 1.png">
+    <link rel="stylesheet" href="poteryashki.css">
+    <meta charset="utf-8" />
+    <script src="https://kit.fontawesome.com/3929e16ef5.js" crossorigin="anonymous"></script>
+    <script src="{% static 'network/functions.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Потеряшки</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="pre-header">
+        <header>
+            <div class="wrap">
+                <a style="margin-top: 5px;" href="index.html">
+                    <img class="header-icon" src="img/Frame 2.svg" alt="">
+                </a>
+                <div class="panel">
+                    <a href="index.html">
+                        Главная
+                    </a>
+                    <a style="text-decoration: none;" href="poteryashki.html">
+                        Потерянные вещи
+                    </a>
+                    <a style="text-decoration: none;color: black;" href="">
+                        Найденные вещи
+                    </a>
+                    <a href="contakti.html">
+                        Контакты
+                    </a>
+                </div>
+                <div class="header-end">
+                    <a style="filter: brightness(0.2);" href="izbrannoe.html"><img src="img/weui_like-outlined.svg"
+                            alt=""></a>
+                    <a style="filter: brightness(0.2);" href="profile.html"><img src="img/lets-icons_user-alt-light.svg"
+                            alt=""></a>
+                    <div
+                        style="display: flex;width: 50%;height: 42px;margin-right: 70px;align-items: center;background-color: rgba(244, 244, 244, 1);border-radius: 95px;">
+                        <div class="search-container">
+                            <img style="position: relative;margin-left: 15px;" src="img/iconoir_search.svg" alt="">
+                            <input type="text" class="search-input" placeholder="Введите свою потеряшку">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+    </div>
+    <!-- сайт -->
+    <div class="content">
+        <div style="display: flex;justify-content: center;">
+            <div
+                style="display: flex;width: 1240px;background: rgba(239, 240, 242, 1);height: 480px;margin-top: 30px;border-radius: 50px;font-family: 'MyFont';font-size: 45px;font-weight: 450;justify-content: center;align-items: center;flex-direction: column;">
+                <p>Найденные вещи</p>
+                <img style="position: absolute;width: 1240px;object-fit: cover;transform: translateY(77px);pointer-events: none;border-radius: 50px;"
+                    src="img/Group 126.png" alt="">
+                <div style="display: flex;flex-direction: row;margin-top: 40px;">
+                    <button id="naidenoi" class="btn" style="width: 280px;height: 60px;" href="">Добавить объявление
+                        <img style="transform: translateY(2px);" id="01" src="img/fluent_ios-arrow-24-filled.svg"
+                            alt=""></button>
+                </div>
+            </div>
+
+        </div>
+        <div style="display: flex;justify-content: center;margin-top: 80px;">
+            <div style="display: flex;width: 1080px;height: max-content;flex-wrap: wrap;">
+                <div style="display: flex;justify-content: space-between; width: 100%;">
+                    <div style="display: flex;">
+                        <button style="width: 80px;height: 40px;margin-right: 15px;" class="btn1-active">Все</button>
+                        <button style="width: 110px;height: 40px;margin-right: 15px;" class="btn1">1 Корпус</button>
+                        <button style="width: 110px;height: 40px;" class="btn1">2 Корпус</button>
+                    </div>
+                    <div
+                        style="display: flex;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);justify-content: center;height: 40px;border-radius: 30px;width: 300px;">
+                        <select
+                            style="width: 250px;background-color: rgba(239, 240, 242, 1);border: none;outline: none;"
+                            id="myDropdown">
+                            <option value="">За все время</option>
+                            <option value="1">За неделю</option>
+                            <option value="2">За месяц</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="display: flex;justify-content: space-between;width: 100%;flex-wrap: wrap;">
+                    <div
+                        style="display: flex; height: 500px;background-color: rgba(239, 240, 242, 1);width: 290px;border-radius: 20px;flex-direction: column;padding: 30px;margin-top: 40px;font-family: 'MyFont2';">
+                        <img style="width: 100%;height: 230px;border-radius: 20px;object-fit: cover;"
+                            src="img/Rectangle 99.png" alt="">
+                        <div class="icons">
+                            <i id="heart1" class="far fa-heart"></i>
+                        </div>
+                        <div
+                            style="display: flex;justify-content: space-between;width: 100%;height: 40px;margin-top: 20px;">
+                            <p style="display: flex;align-items: center;font-weight: 700;font-size: 20px;">Серый рюкзак
+                            </p>
+                            <p
+                                style="border: 1px solid rgba(43, 42, 41, 1);display: flex;align-items: center; border-radius: 20px;padding-left: 5px;padding-right: 5px;">
+                                В ожидании</p>
+                        </div>
+                        <p style="margin-top: 10px;line-height: 120%;">Серый рюкзак с логотипом, немного потертый, с
+                            несколькими карманами, на ручке есть небольшой след.</p>
+                        <a style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);"
+                            href="https://yandex.ru/profile/1082790394?lang=ru"><img
+                                style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector1.svg" alt="">ул.
+                            Рубина,
+                            5, Новороссийск • корпус 1</a>
+                        <p
+                            style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);">
+                            <img style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector4.svg" alt="">15
+                            октября
+                            2025, 14:30
+                        </p>
+                        <div style="display: flex;align-items: center;margin-top: 10px;">
+                            <img style="width: 30px;height: 30px;border-radius: 64px;margin-right: 5px;"
+                                src="img/20b88955d6e91b0f9cbf6e8b1d6959045013c348.jpg" alt="">
+                            <p>Амелия, +7 (912) 345-67-89</p>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; height: 500px;background-color: rgba(239, 240, 242, 1);width: 290px;border-radius: 20px;flex-direction: column;padding: 30px;margin-top: 40px;font-family: 'MyFont2';">
+                        <img style="width: 100%;height: 230px;border-radius: 20px;object-fit: cover;"
+                            src="img/Rectangle 99.png" alt="">
+                        <div class="icons">
+                            <i id="heart2" class="far fa-heart"></i>
+                        </div>
+                        <div
+                            style="display: flex;justify-content: space-between;width: 100%;height: 40px;margin-top: 20px;">
+                            <p style="display: flex;align-items: center;font-weight: 700;font-size: 20px;">Серый рюкзак
+                            </p>
+                            <p
+                                style="border: 1px solid rgba(43, 42, 41, 1);display: flex;align-items: center; border-radius: 20px;padding-left: 5px;padding-right: 5px;">
+                                В ожидании</p>
+                        </div>
+                        <p style="margin-top: 10px;line-height: 120%;">Серый рюкзак с логотипом, немного потертый, с
+                            несколькими карманами, на ручке есть небольшой след.</p>
+                        <a style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);"
+                            href="https://yandex.ru/profile/1082790394?lang=ru"><img
+                                style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector1.svg" alt="">ул.
+                            Рубина,
+                            5, Новороссийск • корпус 1</a>
+                        <p
+                            style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);">
+                            <img style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector4.svg" alt="">15
+                            октября
+                            2025, 14:30
+                        </p>
+                        <div style="display: flex;align-items: center;margin-top: 10px;">
+                            <img style="width: 30px;height: 30px;border-radius: 64px;margin-right: 5px;"
+                                src="img/20b88955d6e91b0f9cbf6e8b1d6959045013c348.jpg" alt="">
+                            <p>Амелия, +7 (912) 345-67-89</p>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; height: 500px;background-color: rgba(239, 240, 242, 1);width: 290px;border-radius: 20px;flex-direction: column;padding: 30px;margin-top: 40px;font-family: 'MyFont2';">
+                        <img style="width: 100%;height: 230px;border-radius: 20px;object-fit: cover;"
+                            src="img/Rectangle 99.png" alt="">
+                        <div class="icons">
+                            <i id="heart3" class="far fa-heart"></i>
+                        </div>
+                        <div
+                            style="display: flex;justify-content: space-between;width: 100%;height: 40px;margin-top: 20px;">
+                            <p style="display: flex;align-items: center;font-weight: 700;font-size: 20px;">Серый рюкзак
+                            </p>
+                            <p
+                                style="border: 1px solid rgba(43, 42, 41, 1);display: flex;align-items: center; border-radius: 20px;padding-left: 5px;padding-right: 5px;">
+                                В ожидании</p>
+                        </div>
+                        <p style="margin-top: 10px;line-height: 120%;">Серый рюкзак с логотипом, немного потертый, с
+                            несколькими карманами, на ручке есть небольшой след.</p>
+                        <a style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);"
+                            href="https://yandex.ru/profile/1082790394?lang=ru"><img
+                                style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector1.svg" alt="">ул.
+                            Рубина,
+                            5, Новороссийск • корпус 1</a>
+                        <p
+                            style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);">
+                            <img style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector4.svg" alt="">15
+                            октября
+                            2025, 14:30
+                        </p>
+                        <div style="display: flex;align-items: center;margin-top: 10px;">
+                            <img style="width: 30px;height: 30px;border-radius: 64px;margin-right: 5px;"
+                                src="img/20b88955d6e91b0f9cbf6e8b1d6959045013c348.jpg" alt="">
+                            <p>Амелия, +7 (912) 345-67-89</p>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; height: 500px;background-color: rgba(239, 240, 242, 1);width: 290px;border-radius: 20px;flex-direction: column;padding: 30px;margin-top: 40px;font-family: 'MyFont2';">
+                        <img style="width: 100%;height: 230px;border-radius: 20px;object-fit: cover;"
+                            src="img/Rectangle 99.png" alt="">
+                        <div class="icons">
+                            <i id="heart4" class="far fa-heart"></i>
+                        </div>
+                        <div
+                            style="display: flex;justify-content: space-between;width: 100%;height: 40px;margin-top: 20px;">
+                            <p style="display: flex;align-items: center;font-weight: 700;font-size: 20px;">Серый рюкзак
+                            </p>
+                            <p
+                                style="border: 1px solid rgba(43, 42, 41, 1);display: flex;align-items: center; border-radius: 20px;padding-left: 5px;padding-right: 5px;">
+                                В ожидании</p>
+                        </div>
+                        <p style="margin-top: 10px;line-height: 120%;">Серый рюкзак с логотипом, немного потертый, с
+                            несколькими карманами, на ручке есть небольшой след.</p>
+                        <a style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);"
+                            href="https://yandex.ru/profile/1082790394?lang=ru"><img
+                                style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector1.svg" alt="">ул.
+                            Рубина,
+                            5, Новороссийск • корпус 1</a>
+                        <p
+                            style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);">
+                            <img style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector4.svg" alt="">15
+                            октября
+                            2025, 14:30
+                        </p>
+                        <div style="display: flex;align-items: center;margin-top: 10px;">
+                            <img style="width: 30px;height: 30px;border-radius: 64px;margin-right: 5px;"
+                                src="img/20b88955d6e91b0f9cbf6e8b1d6959045013c348.jpg" alt="">
+                            <p>Амелия, +7 (912) 345-67-89</p>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; height: 500px;background-color: rgba(239, 240, 242, 1);width: 290px;border-radius: 20px;flex-direction: column;padding: 30px;margin-top: 40px;font-family: 'MyFont2';">
+                        <img style="width: 100%;height: 230px;border-radius: 20px;object-fit: cover;"
+                            src="img/Rectangle 99.png" alt="">
+                        <div class="icons">
+                            <i id="heart5" class="far fa-heart"></i>
+                        </div>
+                        <div
+                            style="display: flex;justify-content: space-between;width: 100%;height: 40px;margin-top: 20px;">
+                            <p style="display: flex;align-items: center;font-weight: 700;font-size: 20px;">Серый рюкзак
+                            </p>
+                            <p
+                                style="border: 1px solid rgba(43, 42, 41, 1);display: flex;align-items: center; border-radius: 20px;padding-left: 5px;padding-right: 5px;">
+                                В ожидании</p>
+                        </div>
+                        <p style="margin-top: 10px;line-height: 120%;">Серый рюкзак с логотипом, немного потертый, с
+                            несколькими карманами, на ручке есть небольшой след.</p>
+                        <a style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);"
+                            href="https://yandex.ru/profile/1082790394?lang=ru"><img
+                                style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector1.svg" alt="">ул.
+                            Рубина,
+                            5, Новороссийск • корпус 1</a>
+                        <p
+                            style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);">
+                            <img style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector4.svg" alt="">15
+                            октября
+                            2025, 14:30
+                        </p>
+                        <div style="display: flex;align-items: center;margin-top: 10px;">
+                            <img style="width: 30px;height: 30px;border-radius: 64px;margin-right: 5px;"
+                                src="img/20b88955d6e91b0f9cbf6e8b1d6959045013c348.jpg" alt="">
+                            <p>Амелия, +7 (912) 345-67-89</p>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; height: 500px;background-color: rgba(239, 240, 242, 1);width: 290px;border-radius: 20px;flex-direction: column;padding: 30px;margin-top: 40px;font-family: 'MyFont2';">
+                        <img style="width: 100%;height: 230px;border-radius: 20px;object-fit: cover;"
+                            src="img/Rectangle 99.png" alt="">
+                        <div class="icons">
+                            <i id="heart6" class="far fa-heart"></i>
+                        </div>
+                        <div
+                            style="display: flex;justify-content: space-between;width: 100%;height: 40px;margin-top: 20px;">
+                            <p style="display: flex;align-items: center;font-weight: 700;font-size: 20px;">Серый рюкзак
+                            </p>
+                            <p
+                                style="border: 1px solid rgba(43, 42, 41, 1);display: flex;align-items: center; border-radius: 20px;padding-left: 5px;padding-right: 5px;">
+                                В ожидании</p>
+                        </div>
+                        <p style="margin-top: 10px;line-height: 120%;">Серый рюкзак с логотипом, немного потертый, с
+                            несколькими карманами, на ручке есть небольшой след.</p>
+                        <a style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);"
+                            href="https://yandex.ru/profile/1082790394?lang=ru"><img
+                                style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector1.svg" alt="">ул.
+                            Рубина,
+                            5, Новороссийск • корпус 1</a>
+                        <p
+                            style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);">
+                            <img style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector4.svg" alt="">15
+                            октября
+                            2025, 14:30
+                        </p>
+                        <div style="display: flex;align-items: center;margin-top: 10px;">
+                            <img style="width: 30px;height: 30px;border-radius: 64px;margin-right: 5px;"
+                                src="img/20b88955d6e91b0f9cbf6e8b1d6959045013c348.jpg" alt="">
+                            <p>Амелия, +7 (912) 345-67-89</p>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; height: 500px;background-color: rgba(239, 240, 242, 1);width: 290px;border-radius: 20px;flex-direction: column;padding: 30px;margin-top: 40px;font-family: 'MyFont2';">
+                        <img style="width: 100%;height: 230px;border-radius: 20px;object-fit: cover;"
+                            src="img/Rectangle 99.png" alt="">
+                        <div class="icons">
+                            <i id="heart7" class="far fa-heart"></i>
+                        </div>
+                        <div
+                            style="display: flex;justify-content: space-between;width: 100%;height: 40px;margin-top: 20px;">
+                            <p style="display: flex;align-items: center;font-weight: 700;font-size: 20px;">Серый рюкзак
+                            </p>
+                            <p
+                                style="border: 1px solid rgba(43, 42, 41, 1);display: flex;align-items: center; border-radius: 20px;padding-left: 5px;padding-right: 5px;">
+                                В ожидании</p>
+                        </div>
+                        <p style="margin-top: 10px;line-height: 120%;">Серый рюкзак с логотипом, немного потертый, с
+                            несколькими карманами, на ручке есть небольшой след.</p>
+                        <a style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);"
+                            href="https://yandex.ru/profile/1082790394?lang=ru"><img
+                                style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector1.svg" alt="">ул.
+                            Рубина,
+                            5, Новороссийск • корпус 1</a>
+                        <p
+                            style="text-decoration: none;display: flex;align-items: center;margin-top: 10px;color: rgba(43, 42, 41, 1);">
+                            <img style="width: 20px;height: 20px;margin-right: 5px;" src="img/Vector4.svg" alt="">15
+                            октября
+                            2025, 14:30
+                        </p>
+                        <div style="display: flex;align-items: center;margin-top: 10px;">
+                            <img style="width: 30px;height: 30px;border-radius: 64px;margin-right: 5px;"
+                                src="img/20b88955d6e91b0f9cbf6e8b1d6959045013c348.jpg" alt="">
+                            <p>Амелия, +7 (912) 345-67-89</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-container">
+            <div class="content-items">
+                <!-- Контент будет добавляться динамически -->
+            </div>
+
+            <div style="display: flex;width: 100%;justify-content: center;">
+                <nav>
+                    <ul id="pagination" class="pagination pagination-lg">
+                        <!-- Кнопки будут вставлены динамически с помощью jQuery -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div class="modal-content" style="">
+            <span class="close"><img style="width: 30px;height: 30px;" src="img/material-symbols_close-rounded.svg"
+                    alt=""></span>
+            <h1 style="font-family: 'MyFont';margin-bottom: 30px;">Форма объявления в НКСЭ</h1>
+            <form action="">
+                <div style="display: flex;flex-direction: row;">
+                    <div style="display: flex;flex-direction: column;">
+                        <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">
+                            Контактная информация</p>
+                        <div style="display: flex;flex-direction: row;margin-bottom: 20px;">
+                            <div
+                                style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;">
+                                <div id="editablefield-1"
+                                    style="outline: none;border: none;width: 250px;height: 38px;background-color: rgba(239, 240, 242, 1);align-items: center;display: flex;justify-content: space-between;font-family: 'MyFont2';">
+                                    Амелия <button style="border: none;" id="editbtn-1"><img src="img/Group.svg"
+                                            alt=""></button> </div>
+                            </div>
+                            <div
+                                style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;font-family: 'MyFont2';">
+                                <div id="editablefield-2"
+                                    style="outline: none;border: none;width: 250px;height: 38px;background-color: rgba(239, 240, 242, 1);align-items: center;display: flex;justify-content: space-between;">
+                                    +7 (995) 685-98-04 <button style="border: none;" id="editbtn-2"><img
+                                            src="img/Group.svg" alt=""></button> </div>
+                            </div>
+                        </div>
+                        <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">
+                            Описание вещи</p>
+                        <div style="display: flex;margin-bottom: 20px;">
+                            <div style="display: flex;flex-direction: column;">
+                                <div
+                                    style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-bottom: 20px;">
+                                    <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                        type="text" name="" id="" placeholder="Название *" required>
+
+                                </div>
+                                <div
+                                    style="display: flex;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);justify-content: center;height: 40px;border-radius: 30px;">
+                                    <select
+                                        style="width: 250px;background-color: rgba(239, 240, 242, 1);border: none;outline: none;"
+                                        id="myDropdown" required>
+                                        <option value="" disabled selected hidden></option>
+                                        <option value="1">Найден</option>
+                                        <option value="2">потерян</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div
+                                style="width: 300px;height: 80px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;align-items: start;">
+                                <input
+                                    style="outline: none;border: none;background-color: rgba(239, 240, 242, 1);margin-top: 10px;"
+                                    type="text" name="" id="" placeholder="Описание (кратко) *" required>
+                            </div>
+                        </div>
+                        <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">Место
+                            и дата</p>
+                        <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin-bottom: 20px;">
+                            <div
+                                style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;">
+                                <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                    type="text" name="" id="" placeholder="Корпус (цифра 1 или 2) *" required>
+                            </div>
+                            <div
+                                style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;">
+                                <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                    type="text" name="" id="" placeholder="Адрес (можно ссылкой из карт) *" required>
+                            </div>
+                            <div
+                                style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-top: 15px">
+                                <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                    type="date" name="" id="" placeholder="__.__.____ *" required>
+                            </div>
+                            <div
+                                style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;margin-top: 15px;">
+                                <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                    type="time" name="" id="" placeholder="Время обнаружения ">
+                            </div>
+                        </div>
+                        <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">Фото
+                            найденной вещи или локации</p>
+                        <div class="media-upload-container">
+                            <div class="upload-area">
+                                <input type="file" id="media-upload" accept="image/*,video/*" multiple
+                                    class="hidden-input">
+                                <label for="media-upload" class="upload-label">
+                                    <div class="preview-plus">
+                                        <div class="plus-icon">+</div>
+                                    </div>
+                                </label>
+                                <div class="previews-container"></div>
+                            </div>
+                        </div>
+                        <div style="width: 100%;display: flex;justify-content: center;">
+                            <button style="height: 50px;margin-top: 40px;" class="btn" type="submit">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div
+            style="display: flex;flex-direction: row;width: 1240px;background: rgba(239, 240, 242, 1);height: 300px;margin-top: 80px;border-radius: 50px;margin-bottom: 30px;align-items: center;justify-content: space-between;">
+            <div style="margin-left: 100px;">
+                <a href=""><img src="img/Frame 2.svg" alt=""></a>
+            </div>
+            <div style="display: flex;flex-direction: column;font-size: 16px;color: rgba(43, 42, 41, 0.8);">
+                <div style="display: flex;flex-direction: row;margin-bottom: 10px;">
+                    <img style="margin-right: 5px;" src="img/Vector1.svg" alt="">
+                    <p>г. Новороссийск, ул. Рубина, 5</p>
+                </div>
+                <div style="display: flex;flex-direction: row;margin-bottom: 10px;">
+                    <img style="margin-right: 5px;" src="img/Vector2.svg" alt="">
+                    <p>+7 (4922) 77-10-74</p>
+                </div>
+                <div style="display: flex;flex-direction: row;margin-bottom: 10px;">
+                    <a style="display: flex;flex-direction: row;text-decoration: none;color: rgba(43, 42, 41, 0.8);"
+                        href="">
+                        <img style="margin-right: 5px;" src="img/Vector3.svg" alt="">
+                        lostandhelp@college.com</a>
+                </div>
+            </div>
+            <div style="display: flex;flex-direction: column;margin-right: 100px;">
+                <div style="display: flex;flex-direction: row;margin-bottom: 20px;">
+                    <a style="color: rgba(43, 42, 41, 0.9);text-decoration: none;display: flex;font-size: 14px;"
+                        href="">
+                        <img style="margin-right: 5px;" src="img/VK.svg" alt="">Вконтакте</a>
+                </div>
+                <div style="display: flex;flex-direction: row;">
+                    <a style="color: rgba(43, 42, 41, 0.9);text-decoration: none;display: flex;font-size: 14px;"
+                        href="">
+                        <img style="margin-right: 5px;" src="img/TGr.svg" alt="">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#heart1").click(function () {
+                $(this).toggleClass('fas fa-heart');
+                $(this).toggleClass('far fa-heart');
+            });
+        });
+        $(document).ready(function () {
+            $("#heart2").click(function () {
+                $(this).toggleClass('fas fa-heart');
+                $(this).toggleClass('far fa-heart');
+            });
+        });
+        $(document).ready(function () {
+            $("#heart3").click(function () {
+                $(this).toggleClass('fas fa-heart');
+                $(this).toggleClass('far fa-heart');
+            });
+        });
+        $(document).ready(function () {
+            $("#heart4").click(function () {
+                $(this).toggleClass('fas fa-heart');
+                $(this).toggleClass('far fa-heart');
+            });
+        });
+        $(document).ready(function () {
+            $("#heart5").click(function () {
+                $(this).toggleClass('fas fa-heart');
+                $(this).toggleClass('far fa-heart');
+            });
+        });
+        $(document).ready(function () {
+            $("#heart6").click(function () {
+                $(this).toggleClass('fas fa-heart');
+                $(this).toggleClass('far fa-heart');
+            });
+        });
+        $(document).ready(function () {
+            $("#heart7").click(function () {
+                $(this).toggleClass('fas fa-heart');
+                $(this).toggleClass('far fa-heart');
+            });
+        });
+
+
+
+
+
+
+        $(document).ready(function () {
+            var currentPage = 1; // Текущая активная страница
+            var totalPages = 10; // Всего страниц (пример значения)
+
+            function renderPagination() {
+                $('#pagination').empty(); // очищаем список кнопок
+
+                // Создаем элементы для предыдущей страницы ("Назад")
+                if (currentPage > 1) {
+                    $('#pagination').append('<li class="page-item"><a class="page-link" href="#">Назад</a></li>');
+                }
+
+                // Генерируем нумерованные кнопки страниц
+                for (var i = 1; i <= totalPages; i++) {
+                    var isActive = (i === currentPage) ? 'active' : '';
+                    $('#pagination').append(
+                        '<li class="page-item ' + isActive + '" data-page="' + i + '">' +
+                        '<a class="page-link" href="#">' + i + '</a>' +
+                        '</li>'
+                    );
+                }
+
+                // Создаем элементы для следующей страницы ("Вперед")
+                if (currentPage < totalPages) {
+                    $('#pagination').append('<li class="page-item"><a class="page-link" href="#">Вперед</a></li>');
+                }
+            }
+
+            // Обработчик кликов по пунктам пагинации
+            $(document).on('click', '.page-item a', function (e) {
+                e.preventDefault();
+                var clickedPage = $(this).parent().data('page'); // Получаем выбранную страницу
+                if ($(this).text() === 'Назад') {
+                    currentPage--;
+                } else if ($(this).text() === 'Вперед') {
+                    currentPage++;
+                } else {
+                    currentPage = clickedPage;
+                }
+                renderPagination(); // Перерисовываем пагинацию
+                loadDataForPage(currentPage); // Загрузка данных для страницы (эта функция должна быть реализована отдельно)
+            });
+
+            // Первая инициализация
+            renderPagination();
+        });
+
+
+
+
+
+
+
+        $('#myDropdown').on('change', function () {
+            console.log($(this).val());
+        });
+
+        $(document).ready(function () {
+            const $input = $('#media-upload');
+            const $previewsContainer = $('.previews-container');
+
+            // Обработчик выбора файлов
+            $input.on('change', function (e) {
+                handleFiles(e.target.files);
+            });
+
+            // Функция создания превью
+            function handleFiles(files) {
+                Array.from(files).forEach(file => {
+                    if (!file.type.match(/(image|video)/)) return;
+
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const previewItem = $(
+                            `<div class="preview-item">
+            ${file.type.includes('image')
+                                ? `<img src="${e.target.result}">`
+                                : `<video src="${e.target.result}" controls></video>`}
+            <button type="button" class="remove-btn">&times;</button>
+          </div>`
+                        );
+
+                        $previewsContainer.append(previewItem);
+
+                        // Обработчик удаления
+                        previewItem.find('.remove-btn').on('click', function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            previewItem.remove();
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        });
+
+
+        $(document).ready(function () {
+            $('.close').click(function () {
+                $('#modal').fadeOut(200).css({
+                    'display': 'none',
+                }),
+                    $('#modal2').fadeOut(200).css({
+                        'display': 'none',
+                    })
+            })
+        });
+
+        $(document).ready(function () {
+            $("#editbtn-1").click(function () {
+                const $field = $("#editablefield-1");
+                const currentText = $field.text().trim();
+
+                $field.html(`<input type="text" id="edit-mode" style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)" value="${currentText}">`);
+
+                $("#edit-mode").on("blur keypress", function (e) {
+                    if (e.type === "blur" || (e.type === "keypress" && e.key === "Enter")) {
+                        const newText = $(this).val();
+                        $field.text(newText).trim(); // Возвращаем текст обратно
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+            $("#editbtn-2").click(function () {
+                const $field = $("#editablefield-2");
+                const currentText = $field.text().trim();
+
+                $field.html(`<input type="text" id="edit-mode" style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)" value="${currentText}">`);
+
+                $("#edit-mode").on("blur keypress", function (e) {
+                    if (e.type === "blur" || (e.type === "keypress" && e.key === "Enter")) {
+                        const newText = $(this).val();
+                        $field.text(newText);
+                    }
+                });
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('#naidenoi').hover(
+                function () {
+                    $('#01').css({
+                        'filter': 'brightness(0.2)',
+                    })
+                },
+                function () {
+                    $('#01').css({
+                        'filter': 'brightness(1)',
+                    })
+                }
+            ),
+                $('.btn').click(function () {
+                    $('#modal').fadeIn(200).css({
+                        'display': 'flex',
+                    })
+                }),
+                $
+        });
+        $(document).ready(function () {
+            $('#poteryanoi').hover(
+                function () {
+                    $('#02').css({
+                        'filter': 'brightness(0.2)',
+                    })
+                },
+                function () {
+                    $('#02').css({
+                        'filter': 'brightness(1)',
+                    })
+                }
+            )
+
+        });
+        $(document).ready(function () {
+            $('#form1').click(function () {
+                $('#modal').css({
+                    'display': 'none',
+                }),
+                    $('#modal2').css({
+                        'display': 'flex',
+                    })
+            },
+
+            )
+        });
+        $(document).ready(function () {
+            $('#form2').click(function () {
+                $('#modal2').css({
+                    'display': 'none',
+                }),
+                    $('#modal').css({
+                        'display': 'flex',
+                    })
+            },
+
+            )
+        });
+    </script>
+
+</body>
+
+</html>

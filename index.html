@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link rel="icon" type="png" href="img/лого 1.png">
+    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8" />
+    <script src="https://kit.fontawesome.com/3929e16ef5.js" crossorigin="anonymous"></script>
+    <script src="{% static 'network/functions.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
+    <title>Потеряшки</title>
+</head>
+
+<body>
+
+    <div class="splash-screen">
+        <video id="splash-video" autoplay muted>
+            <source src="img/0000-0250 (1).mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+
+
+    <!-- header -->
+    <div class="pre-header">
+        <header>
+            <div class="wrap">
+                <a style="margin-top: 5px;" href="index.html">
+                    <img class="header-icon" src="img/Frame 2.svg" alt="">
+                </a>
+                <div class="panel">
+                    <a style="text-decoration: none; color: black;" href="index.html">
+                        Главная
+                    </a>
+                    <a href="poteryashki.html">
+                        Потерянные вещи
+                    </a>
+                    <a href="naidenie.html">
+                        Найденные вещи
+                    </a>
+                    <a href="contakti.html">
+                        Контакты
+                    </a>
+                </div>
+                <div class="header-end">
+                    <a href="izbrannoe.html"><img src="img/weui_like-outlined.svg" alt=""></a>
+                    <a href="profile.html"><img src="img/lets-icons_user-alt-light.svg" alt=""></a>
+                    <div
+                        style="display: flex;width: 50%;height: 42px;margin-right: 70px;align-items: center;background-color: rgba(244, 244, 244, 1);border-radius: 95px;">
+                        <div class="search-container">
+                            <img style="position: relative;margin-left: 15px" src="img/iconoir_search.svg" alt="">
+                            <input type="text" class="search-input" placeholder="Введите свою потеряшку">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+    </div>
+    <!-- сайт -->
+    <div class="content">
+        <div style="display: flex;justify-content: center;width: 100%;">
+            <div style="display: flex;margin: 30px;height: 530px;justify-content: center;max-width: 1240px;">
+                <div
+                    style="display: flex;background-color: rgba(239, 240, 242, 1);height: 100%;width: 50%;border-radius: 50px;flex-direction: column;padding-top: 150px;padding-left: 100px;max-width: 860px;max-height: 680px;">
+                    <div style="display: flex;flex-direction: column;padding-right: 10px;">
+                        <h2 class="Zagolovok"
+                            style="width: 100%;font-size: 45px;font-weight: 450;line-height: 100%;margin-bottom: 20px;">
+                            Поможем найти или вернуть вашу потерянную вещь</h2>
+                        <p class="osnovnoi-text" style="color: rgba(0, 0, 0, 0.6);line-height: 150%;"><b
+                                style="color: rgba(0, 0, 0, 1);">Наш сайт — это место, где студенты и сотрудники
+                                колледжа</b> могут сообщить о потерянных или найденных предметах. Быстрое объявление
+                            поможет
+                            вернуть вашу вещь или найти её.</p>
+                        <button class="btn" id="btn01"
+                            style="height: 50px;margin-top: 40px;font-family: 'MyFont2';padding: 5px;margin-bottom: 50px;font-size: 14px;">
+                            Сообщить о потерянной вещи <img id="01" src="img/fluent_ios-arrow-24-filled.svg" alt=""
+                                data-hover="img/Vector.svg"></button>
+                        <div style="display: flex;flex-direction: row;">
+                            <div
+                                style="background-color: rgba(255, 255, 255, 1);width: 30%;height: 200px;border-radius: 20px;margin-right: 15px;display: flex;flex-direction: column-reverse;">
+                                <p
+                                    style="font-family: 'MyFont';margin-left: 10%;margin-right: 5%;display: flex; color: rgba(0, 0, 0, 0.6);font-weight: 400;margin-bottom: 10%;">
+                                    и найденные вещи</p>
+                                <p
+                                    style="font-family: 'MyFont';margin-left: 10%;margin-right: 5%;display: flex; color: rgba(0, 0, 0, 0.6);font-weight: 400;">
+                                    свежие потерянные</p>
+                                <h1 style="display: flex;justify-content: center;font-family: 'MyFont';">
+                                    500<span style="color: rgba(0, 0, 0, 0.3);">~</span></h1>
+                                <img style="position: relative;transform: translate(100%, -200%);width: 40px;height: 40px;"
+                                    src="img/Ellipse 1.png" alt="">
+                            </div>
+                            <div
+                                style="background-color: rgba(255, 255, 255, 1);width: 30%;height: 200px;border-radius: 20px;margin-right: 15px;display: flex;flex-direction: column-reverse;">
+                                <p
+                                    style="font-family: 'MyFont';margin-left: 5%;margin-right: 10%;display: flex; color: rgba(0, 0, 0, 0.6);font-weight: 400;margin-bottom: 10%;">
+                                    пользователей</p>
+                                <p
+                                    style="font-family: 'MyFont';margin-left: 5%;margin-right: 10%;display: flex; color: rgba(0, 0, 0, 0.6);font-weight: 400;">
+                                    зарегистрированных</p>
+                                <h1 style="display: flex;justify-content: center;font-family: 'MyFont';">
+                                    200<span style="color: rgba(0, 0, 0, 0.3);">+</span></h1>
+                                <img style="position: relative;transform: translate(100%, -200%);width: 40px;height: 40px;"
+                                    src="img/Ellipse 2.png" alt="">
+                            </div>
+                            <div
+                                style="background-color: rgba(255, 255, 255, 1);width: 30%;height: 200px;border-radius: 20px;margin-right: 15px;display: flex;flex-direction: column-reverse;">
+                                <p
+                                    style="font-family: 'MyFont';margin-left: 10%;margin-right: 5%;display: flex; color: rgba(0, 0, 0, 0.6);font-weight: 400;margin-bottom: 10%;">
+                                    возвращено вещей</p>
+                                <p
+                                    style="font-family: 'MyFont';margin-left: 10%;margin-right: 5%;display: flex; color: rgba(0, 0, 0, 0.6);font-weight: 400;">
+                                    Обнаружено и </p>
+                                <h1 style="display: flex;justify-content: center;font-family: 'MyFont';">
+                                    150<span style="color: rgba(0, 0, 0, 0.3);">+</span></h1>
+                                <img style="position: relative;transform: translate(100%, -200%);width: 40px;height: 40px;"
+                                    src="img/Ellipse 3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    style="display: flex;background-color: rgba(44, 49, 53, 1);height: 100%;width: 40%;border-radius: 50px;margin-left: 40px;padding-top: 150px;max-width: 580px;,max-height: 680px;">
+
+                    <img style="position: relative;left:-110px;top: -50px;pointer-events: none;animation: pulse 3s infinite;"
+                        src="img/original-197398316f093445f15806e049b17e20 1.png" alt="">
+                    <img style="position: absolute;pointer-events: none;width: 400px;transform: translate(100px, -100px);"
+                        src="img/e88649126374617.612c9ad3643e1 1.png" alt="">
+                    <img style=" height: 420px;position: absolute;pointer-events: none;border-radius: 50px;transform: translate(201px, 110px);"
+                        src="img/ac402761af76f060188490b2fd7ca379 1.png" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <div
+                style="display: flex;flex-direction: row;margin-left: 145px;margin-top: 200px;margin-right: 145px;width: 1000px;">
+                <div style="display: flex; flex-direction: column;width: 50%;">
+                    <h1 style="margin-bottom: 30px;font-family: 'MyFont';">Свежие находки и потери</h1>
+                    <p style="font-family: 'MyFont2';color: rgba(0, 0, 0, 0.6);line-height: 150%;">На этой странице
+                        представлены <span style="color: rgba(43, 42, 41, 1);">свежие объявления о потерянных и
+                            найденных
+                            вещах в колледже.</span> Здесь вы можете быстро ознакомиться с последними событиями и <span
+                            style="color: rgba(43, 42, 41, 1);">связаться с владельцами или ищущими вещь.</span></p>
+                    <img style="transform: scale(1.5);margin-top: 100px;margin-left: 50px;pointer-events: none;"
+                        src="img/6ljczlor-no-bg-preview (carve_photos) (1) (1)-no-bg-preview (carve.photos)  1.png"
+                        alt="">
+                </div>
+                <div style="display: flex;flex-direction: column;margin-left: 114px;width: 50%;">
+                    <div style="display: flex; flex-direction: column;margin-bottom: 30px;width: 505px;">
+                        <div
+                            style="background-color: rgba(39, 44, 48, 1);border-radius: 20px;flex-direction: column;display: flex;padding: 10px;font-family: 'MyFont2';justify-content: center;">
+                            <div style="display: flex;flex-direction: row;">
+                                <img id="pod1-1" src="img/c144d087a38a94785ac2c6f32704457ba15054c7.png" alt="">
+
+                                <div
+                                    style="display: flex;flex-direction: column;width: 333px;margin-left: 20px;padding: 10px;">
+                                    <div
+                                        style="display: flex;flex-direction: row;justify-content: space-between;width: 100%;font-weight: 700;font-size: 20px;">
+                                        <p style="color: white;">НАЙДЕН Студенческий</p>
+                                        <p style="color: white;">12.10.23</p>
+                                    </div>
+                                    <div>
+                                        <p style="color: white;font-weight: 400;font-size: 16px;margin-top: 10px;">
+                                            Потерян в районе 1 корпуса...</p>
+                                        <div id="pod1"
+                                            style="display: flex;align-items: center;margin-top: 20px;padding-left: 30px;transform: translateX(-30px);">
+                                            <a class="podrobnee" href="">Подробнее<img style="height: 10px;width: 30px;"
+                                                    src="img/Arrow 1.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column;margin-bottom: 30px;">
+                        <div
+                            style="background-color: rgba(39, 44, 48, 1);border-radius: 20px;flex-direction: column;display: flex;padding: 10px;font-family: 'MyFont2';justify-content: center;width: 485px;">
+                            <div style="display: flex;flex-direction: row;">
+                                <img id="pod2-1" src="img/a8555b31a8f293f8ec58a9e050cdefeb0f8078db.jpg" alt="">
+
+                                <div
+                                    style="display: flex;flex-direction: column;width: 333px;margin-left: 20px;padding: 10px;">
+                                    <div
+                                        style="display: flex;flex-direction: row;justify-content: space-between;width: 100%;font-weight: 700;font-size: 20px;">
+                                        <p style="color: white;">НАЙДЕН Чёрный рюкзак</p>
+                                        <p style="color: white;">12.10.23</p>
+                                    </div>
+                                    <div>
+                                        <p style="color: white;font-weight: 400;font-size: 16px;margin-top: 10px;">
+                                            потерян у
+                                            входа 1 корпуса НКСЭ</p>
+                                        <div id="pod2"
+                                            style="display: flex;align-items: center;margin-top: 20px;padding-left: 30px;transform: translateX(-30px);">
+                                            <a class="podrobnee" href="">Подробнее<img style="height: 10px;width: 30px;"
+                                                    src="img/Arrow 1.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column;margin-bottom: 30px;">
+                        <div
+                            style="background-color: rgba(39, 44, 48, 1);border-radius: 20px;flex-direction: column;display: flex;padding: 10px;font-family: 'MyFont2';justify-content: center;width: 485px;">
+                            <div style="display: flex;flex-direction: row;">
+                                <img id="pod3-1" src="img/8cfcc3ca257d70d17960c2538ab8219db765ce9f.png" alt="">
+
+                                <div
+                                    style="display: flex;flex-direction: column;width: 333px;margin-left: 20px;padding: 10px;">
+                                    <div
+                                        style="display: flex;flex-direction: row;justify-content: space-between;width: 100%;font-weight: 700;font-size: 20px;">
+                                        <p style="color: white;">НАЙДЕН Оранжевый рюкзак</p>
+                                        <p style="color: white;">12.10.23</p>
+                                    </div>
+                                    <div>
+                                        <p style="color: white;font-weight: 400;font-size: 16px;margin-top: 10px;">
+                                            На ручке есть небольшой след...</p>
+                                        <div id="pod3"
+                                            style="display: flex;align-items: center;margin-top: 20px;padding-left: 30px;transform: translateX(-30px);">
+                                            <a class="podrobnee" href="">Подробнее<img style="height: 10px;width: 30px;"
+                                                    src="img/Arrow 1.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <div
+                style="display: flex;background-color: rgba(239, 240, 242, 1);height: 100%;margin-left: 30px;margin-right: 30px;border-radius: 50px;z-index: 100;transform: translateY(-50px);width: 1240px;">
+                <div
+                    style="display: flex;padding-top: 80px;padding-bottom: 80px;padding-left: 100px;padding-right: 100px;flex-direction: row;width: 100%;">
+                    <div
+                        style="display: flex;flex-direction: column;width: 30%;font-family: 'MyFont2';font-size: 16px;color: rgba(43, 42, 41, 1);margin-right: 15px;">
+                        <h1 style="font-family: 'MyFont';font-weight: 450;font-size: 45px;line-height: 120%;">Наши
+                            корпусы
+                        </h1>
+                        <p style="color: rgba(0, 0, 0, 0.5);margin-top: 20px;">Адрес 1 корпуса:</p>
+                        <p>г. Новороссийск, ул. Рубина, 5</p>
+                        <p style="color: rgba(0, 0, 0, 0.5);margin-top: 20px;">Адрес 2 корпуса:</p>
+                        <p>г. Новороссийск, ул. Революции 1905 года, 25</p>
+                        <p style="color: rgba(0, 0, 0, 0.5);margin-top: 20px;">Часы работы:</p>
+                        <p>Пн-Сб с 8:00 до 20:00</p>
+                        <button class="btn" id="btn02"
+                            style="height: 50px;margin-top: 60px;font-family: 'MyFont2';padding: 5px;margin-bottom: 40px;"
+                            href=""> Сообщить о потерянной вещи <img style="transform: translateY(2px);" id="02"
+                                src="img/fluent_ios-arrow-24-filled.svg" alt="" data-hover="img/Vector.svg">
+                        </button>
+                    </div>
+                    <div id="map">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;justify-content: center;width: 100%;">
+            <div style="width: 1000px;display: flex;flex-direction: column;">
+                <div>
+                    <div style="display: flex;justify-content: center;margin-bottom: 40px;">
+                        <h1 style="font-family: 'MyFont';line-height: 120%;font-size: 40px;">Руководство по
+                            использованию сайта</h1>
+                    </div>
+                    <div style="display: flex;flex-direction: row;">
+                        <div id="ruk1">
+                            <div style="display: flex;flex-direction: column;">
+                                <h1
+                                    style="font-family: 'MyFont';font-size: 24px;line-height: 110%;margin-bottom: 15px;">
+                                    Как сообщить о
+                                    потерянной вещи</h1>
+                                <ol>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Перейдите в раздел "Объявления о потерянных вещах"</p>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Нажмите "Добавить объявление"</p>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Заполните форму: описание, место, дата, фото (по желанию), контакты</p>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Нажмите "Отправить" — объявление появится на сайте</p>
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div style="display: flex;flex-direction: row-reverse;">
+                                <a id="ruk1-1" href="contakti.html"><img style="height: 15px;" src="img/Arrow 2.svg"
+                                        alt=""></a>
+                                <a id="ruk1-2" href="contakti.html"><img style="height: 15px;" src="img/Arrow 2(1).svg"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                        <div id="ruk2">
+                            <div style="display: flex;flex-direction: column;">
+                                <h1
+                                    style="font-family: 'MyFont';font-size: 24px;line-height: 110%;margin-bottom: 20px;">
+                                    Как найти свою вещь</h1>
+                                <ol>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Используйте поиск и фильтры по месту, дате, типу</p>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Ознакомьтесь с объявлениями и откройте нужное</p>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Свяжитесь с владельцем через контакт или комментарий</p>
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div style="display: flex;flex-direction: row-reverse;">
+                                <a id="ruk2-1" href="contakti.html"><img style="height: 15px;" src="img/Arrow 2.svg"
+                                        alt=""></a>
+                                <a id="ruk2-2" href="contakti.html"><img style="height: 15px;" src="img/Arrow 2(1).svg"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                        <div id="ruk3">
+                            <div style="display: flex;flex-direction: column;">
+                                <h1
+                                    style="font-family: 'MyFont';font-size: 24px;line-height: 110%;margin-bottom: 20px;">
+                                    Если нашли вещь</h1>
+                                <ol>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Создайте новое объявление о находке, заполнив форму</p>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Опубликуйте его — помощь владельцу в поиске</p>
+                                    </li>
+                                    <li style="margin-bottom: 10px;">
+                                        <p>Или свяжитесь с владельцем напрямую, если есть контакт</p>
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div style="display: flex;flex-direction: row-reverse;">
+                                <a id="ruk3-1" href="contakti.html"><img style="height: 15px;" src="img/Arrow 2.svg"
+                                        alt=""></a>
+                                <a id="ruk3-2" href="contakti.html"><img style="height: 15px;" src="img/Arrow 2(1).svg"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div
+            style="display: flex;flex-direction: row;width: 1240px;background: rgba(239, 240, 242, 1);height: 300px;margin-top: 80px;border-radius: 50px;margin-bottom: 30px;align-items: center;justify-content: space-between;">
+            <div style="margin-left: 100px;">
+                <a href=""><img src="img/Frame 2.svg" alt=""></a>
+            </div>
+            <div style="display: flex;flex-direction: column;font-size: 16px;color: rgba(43, 42, 41, 0.8);">
+                <div style="display: flex;flex-direction: row;margin-bottom: 10px;">
+                    <img style="margin-right: 5px;" src="img/Vector1.svg" alt="">
+                    <p>г. Новороссийск, ул. Рубина, 5</p>
+                </div>
+                <div style="display: flex;flex-direction: row;margin-bottom: 10px;">
+                    <img style="margin-right: 5px;" src="img/Vector2.svg" alt="">
+                    <p>+7 (4922) 77-10-74</p>
+                </div>
+                <div style="display: flex;flex-direction: row;margin-bottom: 10px;">
+                    <a style="display: flex;flex-direction: row;text-decoration: none;color: rgba(43, 42, 41, 0.8);"
+                        href="">
+                        <img style="margin-right: 5px;" src="img/Vector3.svg" alt="">
+                        lostandhelp@college.com</a>
+                </div>
+            </div>
+            <div style="display: flex;flex-direction: column;margin-right: 100px;">
+                <div style="display: flex;flex-direction: row;margin-bottom: 20px;">
+                    <a style="color: rgba(43, 42, 41, 0.9);text-decoration: none;display: flex;font-size: 14px;"
+                        href="">
+                        <img style="margin-right: 5px;" src="img/VK.svg" alt="">Вконтакте</a>
+                </div>
+                <div style="display: flex;flex-direction: row;">
+                    <a style="color: rgba(43, 42, 41, 0.9);text-decoration: none;display: flex;font-size: 14px;"
+                        href="">
+                        <img style="margin-right: 5px;" src="img/TGr.svg" alt="">Telegram</a>
+                </div>
+            </div>
+        </div>
+        <div id="modal">
+            <div class="modal-content" style="">
+                <span class="close"><img style="width: 30px;height: 30px;" src="img/material-symbols_close-rounded.svg"
+                        alt=""></span>
+                <h1 style="font-family: 'MyFont';margin-bottom: 30px;">Форма объявления в НКСЭ</h1>
+                <form action="">
+                    <div style="display: flex;flex-direction: row;">
+                        <div style="display: flex;flex-direction: column;">
+                            <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">
+                                Контактная информация</p>
+                            <div style="display: flex;flex-direction: row;margin-bottom: 20px;">
+                                <div
+                                    style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;">
+                                    <div id="editablefield-1"
+                                        style="outline: none;border: none;width: 250px;height: 38px;background-color: rgba(239, 240, 242, 1);align-items: center;display: flex;justify-content: space-between;font-family: 'MyFont2';">
+                                        Амелия <button style="border: none;" id="editbtn-1"><img src="img/Group.svg"
+                                                alt=""></button> </div>
+                                </div>
+                                <div
+                                    style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;font-family: 'MyFont2';">
+                                    <div id="editablefield-2"
+                                        style="outline: none;border: none;width: 250px;height: 38px;background-color: rgba(239, 240, 242, 1);align-items: center;display: flex;justify-content: space-between;">
+                                        +7 (995) 685-98-04 <button style="border: none;" id="editbtn-2"><img
+                                                src="img/Group.svg" alt=""></button> </div>
+                                </div>
+                            </div>
+                            <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">
+                                Описание вещи</p>
+                            <div style="display: flex;margin-bottom: 20px;">
+                                <div style="display: flex;flex-direction: column;">
+                                    <div
+                                        style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-bottom: 20px;">
+                                        <input
+                                            style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                            type="text" name="" id="" placeholder="Название *" required>
+
+                                    </div>
+                                    <div
+                                        style="display: flex;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);justify-content: center;height: 40px;border-radius: 30px;">
+                                        <select
+                                            style="width: 250px;background-color: rgba(239, 240, 242, 1);border: none;outline: none;"
+                                            id="myDropdown" required>
+                                            <option value="" disabled selected hidden></option>
+                                            <option value="1">Найден</option>
+                                            <option value="2">Потерян</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div
+                                    style="width: 300px;height: 80px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;align-items: start;">
+                                    <input
+                                        style="outline: none;border: none;background-color: rgba(239, 240, 242, 1);margin-top: 10px;"
+                                        type="text" name="" id="" placeholder="Описание (кратко) *" required>
+                                </div>
+                            </div>
+                            <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">Место
+                                и дата</p>
+                            <div style="display: flex;flex-direction: row;flex-wrap: wrap;margin-bottom: 20px;">
+                                <div
+                                    style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;">
+                                    <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                        type="text" name="" id="" placeholder="Корпус (цифра 1 или 2) *" required>
+                                </div>
+                                <div
+                                    style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;">
+                                    <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                        type="text" name="" id="" placeholder="Адрес (можно ссылкой из карт) *"
+                                        required>
+                                </div>
+                                <div
+                                    style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-top: 15px">
+                                    <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                        type="date" name="" id="" placeholder="__.__.____ *" required>
+                                </div>
+                                <div
+                                    style="width: 300px;height: 40px;border-radius: 30px;background-color: rgba(239, 240, 242, 1);border: 1px solid rgba(43, 42, 41, 0.1);display: flex;justify-content: center;margin-left: 50px;margin-top: 15px;">
+                                    <input style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)"
+                                        type="time" name="" id="" placeholder="Время обнаружения ">
+                                </div>
+                            </div>
+                            <p style="font-size: 24px;font-weight: 450;font-family: 'MyFont';margin-bottom:15px;">Фото
+                                найденной вещи или локации</p>
+                            <div class="media-upload-container">
+                                <div class="upload-area">
+                                    <input type="file" id="media-upload" accept="image/*,video/*" multiple
+                                        class="hidden-input">
+                                    <label for="media-upload" class="upload-label">
+                                        <div class="preview-plus">
+                                            <div class="plus-icon">+</div>
+                                        </div>
+                                    </label>
+                                    <div class="previews-container"></div>
+                                </div>
+                            </div>
+                            <div style="width: 100%;display: flex;justify-content: center;">
+                                <button style="height: 50px;margin-top: 40px;" class="btn"
+                                    type="submit">Отправить</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('#form1').click(function () {
+                $('#modal').css({
+                    'display': 'none',
+                }),
+                    $('#modal2').css({
+                        'display': 'flex',
+                    })
+            },
+
+            )
+        });
+        $(document).ready(function () {
+            $('#form2').click(function () {
+                $('#modal2').css({
+                    'display': 'none',
+                }),
+                    $('#modal').css({
+                        'display': 'flex',
+                    })
+            },
+
+            )
+        });
+
+
+
+        $(document).ready(function () {
+            const $input = $('#media-upload');
+            const $previewsContainer = $('.previews-container');
+            const $uploadLabel = $('.upload-label');
+
+            // Обработчик изменения input
+            $input.on('change', function (e) {
+                handleFiles(e.target.files);
+            });
+
+            // Drag and Drop
+            $uploadLabel.on('dragover', function (e) {
+                e.preventDefault();
+                $(this).addClass('dragover');
+            }).on('dragleave', function (e) {
+                e.preventDefault();
+                $(this).removeClass('dragover');
+            }).on('drop', function (e) {
+                e.preventDefault();
+                $(this).removeClass('dragover');
+                $input[0].files = e.originalEvent.dataTransfer.files;
+                handleFiles($input[0].files);
+            });
+
+            // Функция обработки файлов
+            function handleFiles(files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const fileType = file.type.split('/')[0];
+
+                    if (fileType !== 'image' && fileType !== 'video') continue;
+
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        const $previewItem = $('<div>').addClass('preview-item');
+                        const $removeBtn = $('<button>').addClass('remove-btn').html('×');
+
+                        if (fileType === 'image') {
+                            $previewItem.append($('<img>').attr('src', e.target.result));
+                        } else {
+                            $previewItem.append($('<video>')
+                                .attr('src', e.target.result)
+                                .prop('controls', true));
+                        }
+
+                        $previewItem.append($removeBtn);
+                        $previewsContainer.append($previewItem);
+
+                        // Удаление превью
+                        $removeBtn.on('click', function () {
+                            $previewItem.remove();
+                            updateFileInput();
+                        });
+                    }
+
+                    reader.readAsDataURL(file);
+                }
+                updateFileInput();
+            }
+
+            // Обновление input files после удаления
+            function updateFileInput() {
+                // Здесь можно добавить логику обновления input.files
+                // если нужно сохранять список выбранных файлов
+            }
+        });
+
+        $(document).ready(function () {
+            // Проверяем, показывали ли уже заставку
+            if (!localStorage.getItem('splashShown')) {
+                const $splash = $('.splash-screen');
+                const $video = $('#splash-video');
+
+                // Показываем заставку
+                $splash.fadeIn(300);
+
+                // Обработка окончания видео
+                $video.on('ended', function () {
+                    $splash.fadeOut(500, function () {
+                        $(this).remove();
+                    });
+                    localStorage.setItem('splashShown', 'true');
+                });
+
+                // Обработка ошибки загрузки видео
+                $video.on('error', function () {
+                    $splash.fadeOut(300).remove();
+                    localStorage.setItem('splashShown', 'true');
+                });
+
+                // Кнопка пропуска
+                $('#slash-video').click(function () {
+                    $splash.fadeOut(300, function () {
+                        $(this).remove();
+                    });
+                    localStorage.setItem('splashShown', 'true');
+                });
+            } else {
+                $('.splash-screen').remove();
+            }
+        });
+
+
+
+        $(document).ready(function () {
+            $('#btn01').hover(
+                function () {
+                    $('#01').css({
+                        'filter': 'brightness(0.2)',
+                    })
+                },
+                function () {
+                    $('#01').css({
+                        'filter': 'brightness(1)',
+                    })
+                }
+            ),
+                $('.btn').click(function () {
+                    $('#modal').fadeIn(200).css({
+                        'display': 'flex',
+                    })
+                }),
+                $
+        });
+
+        $(document).ready(function () {
+            $('.close').click(function () {
+                $('#modal').fadeOut(200).css({
+                    'display': 'none',
+                }),
+                    $('#modal2').fadeOut(200).css({
+                        'display': 'none',
+                    })
+            })
+        });
+
+        $(document).ready(function () {
+            $("#editbtn-1").click(function () {
+                const $field = $("#editablefield-1");
+                const currentText = $field.text().trim();
+
+                $field.html(`<input type="text" id="edit-mode" style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)" value="${currentText}">`);
+
+                $("#edit-mode").on("blur keypress", function (e) {
+                    if (e.type === "blur" || (e.type === "keypress" && e.key === "Enter")) {
+                        const newText = $(this).val();
+                        $field.text(newText); // Возвращаем текст обратно
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+            $("#editbtn-2").click(function () {
+                const $field = $("#editablefield-2");
+                const currentText = $field.text().trim();
+
+                $field.html(`<input type="text" id="edit-mode" style="outline: none;border: none;background-color: rgba(239, 240, 242, 1)" value="${currentText}">`);
+
+                $("#edit-mode").on("blur keypress", function (e) {
+                    if (e.type === "blur" || (e.type === "keypress" && e.key === "Enter")) {
+                        const newText = $(this).val();
+                        $field.text(newText); // Возвращаем текст обратно
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $('#btn02').hover(
+                function () {
+                    $('#02').css({
+                        'filter': 'brightness(0.2)',
+                    })
+                },
+                function () {
+                    $('#02').css({
+                        'filter': 'brightness(1)',
+                    })
+                }
+            )
+
+        });
+
+
+        $(document).ready(function () {
+            $('#pod1').hover(
+                function () {
+                    $('#pod1-1').css({
+                        'width': '130px',
+                    });
+                },
+                function () {
+                    $('#pod1-1').css({
+                        'width': '80px',
+                    });
+                }
+            );
+        });
+        $(document).ready(function () {
+            $('#pod2').hover(
+                function () {
+                    $('#pod2-1').css({
+                        'width': '130px',
+                    });
+                },
+                function () {
+                    $('#pod2-1').css({
+                        'width': '80px',
+                    });
+                }
+            );
+        });
+        $(document).ready(function () {
+            $('#pod3').hover(
+                function () {
+                    $('#pod3-1').css({
+                        'width': '130px',
+                    });
+                },
+                function () {
+                    $('#pod3-1').css({
+                        'width': '80px',
+                    });
+                }
+            );
+        });
+
+        $(document).ready(function () {
+            $('#ruk1').hover(
+                function () {
+                    $('#ruk1').css({
+                        'background': 'rgba(43, 42, 41, 1)',
+                        'color': 'rgba(255, 255, 255, 1)'
+                    });
+                    $('#ruk1-1').css({
+                        'visibility': 'hidden'
+                    });
+                    $('#ruk1-2').css({
+                        'visibility': 'visible'
+                    })
+                },
+                function () {
+                    $('#ruk1').css({
+                        'background': 'rgba(239, 240, 242, 1)',
+                        'color': 'rgba(43, 42, 41, 1)'
+                    });
+                    $('#ruk1-1').css({
+                        'visibility': 'visible'
+                    });
+                    $('#ruk1-2').css({
+                        'visibility': 'hidden'
+                    })
+                }
+            )
+        });
+        $(document).ready(function () {
+            $('#ruk2').hover(
+                function () {
+                    $('#ruk2').css({
+                        'background': 'rgba(43, 42, 41, 1)',
+                        'color': 'rgba(255, 255, 255, 1)'
+                    });
+                    $('#ruk2-1').css({
+                        'visibility': 'hidden'
+                    });
+                    $('#ruk2-2').css({
+                        'visibility': 'visible'
+                    })
+                },
+                function () {
+                    $('#ruk2').css({
+                        'background': 'rgba(239, 240, 242, 1)',
+                        'color': 'rgba(43, 42, 41, 1)'
+                    });
+                    $('#ruk2-1').css({
+                        'visibility': 'visible'
+                    });
+                    $('#ruk2-2').css({
+                        'visibility': 'hidden'
+                    })
+                }
+            )
+        });
+        $(document).ready(function () {
+            $('#ruk3').hover(
+                function () {
+                    $('#ruk3').css({
+                        'background': 'rgba(43, 42, 41, 1)',
+                        'color': 'rgba(255, 255, 255, 1)'
+                    });
+                    $('#ruk3-1').css({
+                        'visibility': 'hidden'
+                    });
+                    $('#ruk3-2').css({
+                        'visibility': 'visible'
+                    })
+                },
+                function () {
+                    $('#ruk3').css({
+                        'background': 'rgba(239, 240, 242, 1)',
+                        'color': 'rgba(43, 42, 41, 1)'
+                    });
+                    $('#ruk3-1').css({
+                        'visibility': 'visible'
+                    });
+                    $('#ruk3-2').css({
+                        'visibility': 'hidden'
+                    })
+                }
+            )
+        });
+
+
+
+
+        ymaps.ready(init);
+
+        function init() {
+            const myMap = new ymaps.Map("map", {
+                center: [44.717557, 37.775944], 
+                zoom: 15 
+            });
+
+            var myPlacemark = new ymaps.Placemark([44.720433, 37.774914], {
+                hintContent: '1й Корпус', 
+                balloonContent: '1й Корпус НКСЭ',
+
+            },
+                {
+                    
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/Frame 1376.png', 
+                    iconImageSize: [24, 28], 
+                    iconImageOffset: [-20, -40] 
+                }
+            );
+            var myPlacemark2 = new ymaps.Placemark([44.715093, 37.775558], {
+                hintContent: '2й Корпус', 
+                balloonContent: '2й Корпус НКСЭ', 
+            },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/Frame 1376.png', 
+                    iconImageSize: [24, 28], 
+                    iconImageOffset: [-20, -40] 
+                }
+        );
+
+
+        myMap.geoObjects.add(myPlacemark);
+        myMap.geoObjects.add(myPlacemark2);
+        };
+
+    </script>
+
+</body>
+
+</html>
